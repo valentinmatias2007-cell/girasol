@@ -24,7 +24,7 @@
       body {
         background-color: var(--color-bg);
         min-height: 100vh;
-        overflow-x: hidden;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -36,7 +36,7 @@
         font-size: 2rem;
         color: #ff8c00;
         text-align: center;
-        margin: 40px 10px 20px 10px;
+        margin: 50px 0 20px 0;
         text-shadow: 1px 1px 3px #fff;
       }
 
@@ -87,7 +87,7 @@
 
       .flower_wrapper .flower_stem {
         width: 15px;
-        height: 220px;
+        height: 300px;
         background-image: var(--line-color);
         border-radius: 15px;
       }
@@ -97,8 +97,8 @@
         top: -70px;
         left: 50%;
         transform: translateX(-50%);
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         background: var(--flower-center);
         z-index: 5;
@@ -109,8 +109,8 @@
 
       .flower_wrapper .flower_petal {
         position: absolute;
-        width: 45px;
-        height: 90px;
+        width: 50px;
+        height: 100px;
         background: var(--petal-color);
         clip-path: ellipse(35% 50% at 50% 50%);
         top: -40%;
@@ -135,14 +135,14 @@
 
       .flower_leaf {
         position: absolute;
-        width: 40px;
-        height: 70px;
+        width: 50px;
+        height: 80px;
         background: var(--leaf-color);
         border-radius: 100px 20px 100px 20px;
         transform-origin: center bottom;
       }
-      .flower_leaf-1 { left: 60%; bottom: 100px; transform: translateX(-45%) rotate(80deg); }
-      .flower_leaf-2 { left: 60%; bottom: 140px; transform: translateX(-55%) rotate(-80deg); }
+      .flower_leaf-1 { left: 60%; bottom: 120px; transform: translateX(-45%) rotate(80deg); }
+      .flower_leaf-2 { left: 60%; bottom: 160px; transform: translateX(-55%) rotate(-80deg); }
 
       @keyframes open-flower-petal {
         0% { transform: translateX(-50%) translateY(50px) rotate(0deg); opacity: 0; }
@@ -159,66 +159,62 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        gap: 50px;
-        margin-top: 100px;
-        flex-wrap: wrap;
+        gap: 140px; 
+        margin-top: 140px; 
       }
 
       .flower-wrapper-small {
-        transform: scale(0.7);
+        transform: scale(0.5);
       }
-
-      /* Ajustes para celular */
-      @media (max-width: 600px) {
-        .flowers-container {
-          gap: 20px;
-          margin-top: 80px;
-        }
-        .beautiful-text {
-          font-size: 1.6rem;
-        }
-      }
-
       .return-btn {
-        display: inline-block;
-        margin: 40px 0;
-        padding: 12px 25px;
-        font-size: 18px;
-        font-family: 'Dancing Script', cursive;
-        color: #fff;
-        background: linear-gradient(45deg, #ffbb00, #ff5e00);
-        border-radius: 50px;
-        text-decoration: none;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
-      }
+    display: inline-block;
+    margin: 40px 0;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+    background: linear-gradient(45deg, #ffbb00, #ff5e00);
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
 
-      .return-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-      }
+  .return-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  }
     </style>
   </head>
   <body>
     <div class="beautiful-text">
-      para mi chinita con mucho amor <br> te amooooooo 
+       para mi chinita con mucho amor <br> te amooooooo 
     </div>
 
-    <!-- Corazones -->
-    <div class="heart" style="left:10%; animation-delay:0s;"></div>
-    <div class="heart" style="left:40%; animation-delay:2s;"></div>
-    <div class="heart" style="left:70%; animation-delay:4s;"></div>
-    <div class="heart" style="left:90%; animation-delay:6s;"></div>
+   
+    <div class="heart" style="left:5%; animation-delay:0s;"></div>
+    <div class="heart" style="left:15%; animation-delay:1s;"></div>
+    <div class="heart" style="left:25%; animation-delay:2s;"></div>
+    <div class="heart" style="left:35%; animation-delay:3s;"></div>
+    <div class="heart" style="left:45%; animation-delay:4s;"></div>
+    <div class="heart" style="left:55%; animation-delay:5s;"></div>
+    <div class="heart" style="left:65%; animation-delay:2.5s;"></div>
+    <div class="heart" style="left:75%; animation-delay:1.5s;"></div>
+    <div class="heart" style="left:85%; animation-delay:3.5s;"></div>
+    <div class="heart" style="left:95%; animation-delay:4.5s;"></div>
 
-    <!-- Confetti -->
-    <div class="confetti" style="left:20%; animation-duration:5s;"></div>
-    <div class="confetti" style="left:50%; animation-duration:6s;"></div>
-    <div class="confetti" style="left:80%; animation-duration:7s;"></div>
+    
+    <div class="confetti" style="left:5%; animation-duration:5s;"></div>
+    <div class="confetti" style="left:15%; animation-duration:6s;"></div>
+    <div class="confetti" style="left:35%; animation-duration:4s;"></div>
+    <div class="confetti" style="left:50%; animation-duration:7s;"></div>
+    <div class="confetti" style="left:65%; animation-duration:5s;"></div>
+    <div class="confetti" style="left:80%; animation-duration:6s;"></div>
 
-    <!-- Solo 3 girasoles -->
+   
     <div class="flowers-container">
-      <!-- Girasol pequeño -->
       <div class="flower_wrapper flower-wrapper-small">
+        
         <div class="flower_stem"></div>
         <div class="flower_center"></div>
         <div class="flower_petal flower_petal-1"></div>
@@ -237,8 +233,28 @@
         <div class="flower_leaf flower_leaf-2"></div>
       </div>
 
-      <!-- Girasol grande (centro) -->
+      <div class="flower_wrapper flower-wrapper-small">
+       
+        <div class="flower_stem"></div>
+        <div class="flower_center"></div>
+        <div class="flower_petal flower_petal-1"></div>
+        <div class="flower_petal flower_petal-2"></div>
+        <div class="flower_petal flower_petal-3"></div>
+        <div class="flower_petal flower_petal-4"></div>
+        <div class="flower_petal flower_petal-5"></div>
+        <div class="flower_petal flower_petal-6"></div>
+        <div class="flower_petal flower_petal-7"></div>
+        <div class="flower_petal flower_petal-8"></div>
+        <div class="flower_petal flower_petal-9"></div>
+        <div class="flower_petal flower_petal-10"></div>
+        <div class="flower_petal flower_petal-11"></div>
+        <div class="flower_petal flower_petal-12"></div>
+        <div class="flower_leaf flower_leaf-1"></div>
+        <div class="flower_leaf flower_leaf-2"></div>
+      </div>
+
       <div class="flower_wrapper">
+        
         <div class="flower_stem"></div>
         <div class="flower_center"></div>
         <div class="flower_petal flower_petal-1"></div>
@@ -257,8 +273,28 @@
         <div class="flower_leaf flower_leaf-2"></div>
       </div>
 
-      <!-- Girasol pequeño -->
       <div class="flower_wrapper flower-wrapper-small">
+       
+        <div class="flower_stem"></div>
+        <div class="flower_center"></div>
+        <div class="flower_petal flower_petal-1"></div>
+        <div class="flower_petal flower_petal-2"></div>
+        <div class="flower_petal flower_petal-3"></div>
+        <div class="flower_petal flower_petal-4"></div>
+        <div class="flower_petal flower_petal-5"></div>
+        <div class="flower_petal flower_petal-6"></div>
+        <div class="flower_petal flower_petal-7"></div>
+        <div class="flower_petal flower_petal-8"></div>
+        <div class="flower_petal flower_petal-9"></div>
+        <div class="flower_petal flower_petal-10"></div>
+        <div class="flower_petal flower_petal-11"></div>
+        <div class="flower_petal flower_petal-12"></div>
+        <div class="flower_leaf flower_leaf-1"></div>
+        <div class="flower_leaf flower_leaf-2"></div>
+      </div>
+
+      <div class="flower_wrapper flower-wrapper-small">
+       
         <div class="flower_stem"></div>
         <div class="flower_center"></div>
         <div class="flower_petal flower_petal-1"></div>
@@ -277,7 +313,7 @@
         <div class="flower_leaf flower_leaf-2"></div>
       </div>
     </div>
-
-    <a href="index.html" class="return-btn">Regresar</a>
   </body>
+  <a href="index.html" class="return-btn">Regresar</a>
+
 </html>
