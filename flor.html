@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PARA MI AMOR</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --color-bg: #fff8d6;
+        --line-color: linear-gradient(to top, #82ff86, #104e1c);
+        --flower-center: radial-gradient(circle, #000, #ff5e00);
+        --leaf-color: radial-gradient(circle, #82ff86, #104e1c);
+        --petal-color: radial-gradient(circle, #ffbb00, #ff5e00);
+      }
+
+      body {
+        background-color: var(--color-bg);
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .beautiful-text {
+        font-family: 'Dancing Script', cursive;
+        font-size: 2rem;
+        color: #ff8c00;
+        text-align: center;
+        margin: 50px 0 20px 0;
+        text-shadow: 1px 1px 3px #fff;
+      }
+
+      .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #ffb800;
+        transform: rotate(-45deg);
+        animation: float 8s linear infinite;
+      }
+      .heart::before,
+      .heart::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #ffb800;
+        border-radius: 50%;
+      }
+      .heart::before { top: -10px; left: 0; }
+      .heart::after { left: 10px; top: 0; }
+
+      @keyframes float {
+        0% { transform: translateY(100vh) rotate(-45deg) scale(0.5); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(-100vh) rotate(-45deg) scale(1); opacity: 0; }
+      }
+
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #ffb800;
+        border-radius: 50%;
+        animation: confetti-fall linear infinite;
+      }
+
+      @keyframes confetti-fall {
+        0% { transform: translateY(-10vh) rotate(0deg); }
+        100% { transform: translateY(110vh) rotate(360deg); }
+      }
+
+      .flower_wrapper {
+        position: relative;
+        z-index: 5;
+      }
+
+      .flower_wrapper .flower_stem {
+        width: 15px;
+        height: 300px;
+        background-image: var(--line-color);
+        border-radius: 15px;
+      }
+
+      .flower_wrapper .flower_center {
+        position: absolute;
+        top: -70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: var(--flower-center);
+        z-index: 5;
+        opacity: 0;
+        animation: open-flower-center 1s ease-out forwards;
+        animation-delay: 1s;
+      }
+
+      .flower_wrapper .flower_petal {
+        position: absolute;
+        width: 50px;
+        height: 100px;
+        background: var(--petal-color);
+        clip-path: ellipse(35% 50% at 50% 50%);
+        top: -40%;
+        left: 50%;
+        transform-origin: center bottom;
+        opacity: 0;
+        animation: open-flower-petal 1s ease-out forwards;
+      }
+
+      .flower_petal-1 { --rotate-deg: 0deg; animation-delay: 1.2s; }
+      .flower_petal-2 { --rotate-deg: 30deg; animation-delay: 1.25s; }
+      .flower_petal-3 { --rotate-deg: 60deg; animation-delay: 1.3s; }
+      .flower_petal-4 { --rotate-deg: 90deg; animation-delay: 1.35s; }
+      .flower_petal-5 { --rotate-deg: 120deg; animation-delay: 1.4s; }
+      .flower_petal-6 { --rotate-deg: 150deg; animation-delay: 1.45s; }
+      .flower_petal-7 { --rotate-deg: 180deg; animation-delay: 1.5s; }
+      .flower_petal-8 { --rotate-deg: 210deg; animation-delay: 1.55s; }
+      .flower_petal-9 { --rotate-deg: 240deg; animation-delay: 1.6s; }
+      .flower_petal-10 { --rotate-deg: 270deg; animation-delay: 1.65s; }
+      .flower_petal-11 { --rotate-deg: 300deg; animation-delay: 1.7s; }
+      .flower_petal-12 { --rotate-deg: 330deg; animation-delay: 1.75s; }
+
+      .flower_leaf {
+        position: absolute;
+        width: 50px;
+        height: 80px;
+        background: var(--leaf-color);
+        border-radius: 100px 20px 100px 20px;
+        transform-origin: center bottom;
+      }
+      .flower_leaf-1 { left: 60%; bottom: 120px; transform: translateX(-45%) rotate(80deg); }
+      .flower_leaf-2 { left: 60%; bottom: 160px; transform: translateX(-55%) rotate(-80deg); }
+
+      @keyframes open-flower-petal {
+        0% { transform: translateX(-50%) translateY(50px) rotate(0deg); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateX(-50%) translateY(0) rotate(var(--rotate-deg)); opacity: 1; }
+      }
+
+      @keyframes open-flower-center {
+        0% { transform: translateX(-50%) scale(0); opacity: 0; }
+        100% { transform: translateX(-50%) scale(1); opacity: 1; }
+      }
+
+      .flowers-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 140px; 
+        margin-top: 140px; 
+      }
+
+      .flower-wrapper-small {
+        transform: scale(0.5);
+      }
+      .return-btn {
+    display: inline-block;
+    margin: 40px 0;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+    background: linear-gradient(45deg, #ffbb00, #ff5e00);
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .return-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  }
+    </style>
+  </head>
+  <body>
+    <div class="beautiful-text">
+       para mi chinita con mucho amor <br> te amooooooo 
+    </div>
+
+   
+    <div class="heart" style="left:5%; animation-delay:0s;"></div>
+    <div class="heart" style="left:15%; animation-delay:1s;"></div>
+    <div class="heart" style="left:25%; animation-delay:2s;"></div>
+    <div class="heart" style="left:35%; animation-delay:3s;"></div>
+    <div class="heart" style="left:45%; animation-delay:4s;"></div>
+    <div class="heart" style="left:55%; animation-delay:5s;"></div>
+    <div class="heart" style="left:65%; animation-delay:2.5s;"></div>
+    <div class="heart" style="left:75%; animation-delay:1.5s;"></div>
+    <div class="heart" style="left:85%; animation-delay:3.5s;"></div>
+    <div class="heart" style="left:95%; animation-delay:4.5s;"></div>
+
+    
+    <div class="confetti" style="left:5%; animation-duration:5s;"></div>
+    <div class="confetti" style="left:15%; animation-duration:6s;"></div>
+    <div class="confetti" style="left:35%; animation-duration:4s;"></div>
+    <div class="confetti" style="left:50%; animation-duration:7s;"></div>
+    <div class="confetti" style="left:65%; animation-duration:5s;"></div>
+    <div class="confetti" style="left:80%; animation-duration:6s;"></div>
+
+   
+    <div class="flowers-container">
+      <div class="flower_wrapper flower-wrapper-small">
+        
+        <div class="flower_stem"></div>
+        <div class="flower_center"></div>
+        <div class="flower_petal flower_petal-1"></div>
+        <div class="flower_petal flower_petal-2"></div>
+        <div class="flower_petal flower_petal-3"></div>
+        <div class="flower_petal flower_petal-4"></div>
+        <div class="flower_petal flower_petal-5"></div>
+        <div class="flower_petal flower_petal-6"></div>
+        <div class="flower_petal flower_petal-7"></div>
+        <div class="flower_petal flower_petal-8"></div>
+        <div class="flower_petal flower_petal-9"></div>
+        <div class="flower_petal flower_petal-10"></div>
+        <div class="flower_petal flower_petal-11"></div>
+        <div class="flower_petal flower_petal-12"></div>
+        <div class="flower_leaf flower_leaf-1"></div>
+        <div class="flower_leaf flower_leaf-2"></div>
+      </div>
+
+      <div class="flower_wrapper flower-wrapper-small">
+       
+        <div class="flower_stem"></div>
+        <div class="flower_center"></div>
+        <div class="flower_petal flower_petal-1"></div>
+        <div class="flower_petal flower_petal-2"></div>
+        <div class="flower_petal flower_petal-3"></div>
+        <div class="flower_petal flower_petal-4"></div>
+        <div class="flower_petal flower_petal-5"></div>
+        <div class="flower_petal flower_petal-6"></div>
+        <div class="flower_petal flower_petal-7"></div>
+        <div class="flower_petal flower_petal-8"></div>
+        <div class="flower_petal flower_petal-9"></div>
+        <div class="flower_petal flower_petal-10"></div>
+        <div class="flower_petal flower_petal-11"></div>
+        <div class="flower_petal flower_petal-12"></div>
+        <div class="flower_leaf flower_leaf-1"></div>
+        <div class="flower_leaf flower_leaf-2"></div>
+      </div>
+
+      <div class="flower_wrapper">
+        
+        <div class="flower_stem"></div>
+        <div class="flower_center"></div>
+        <div class="flower_petal flower_petal-1"></div>
+        <div class="flower_petal flower_petal-2"></div>
+        <div class="flower_petal flower_petal-3"></div>
+        <div class="flower_petal flower_petal-4"></div>
+        <div class="flower_petal flower_petal-5"></div>
+        <div class="flower_petal flower_petal-6"></div>
+        <div class="flower_petal flower_petal-7"></div>
+        <div class="flower_petal flower_petal-8"></div>
+        <div class="flower_petal flower_petal-9"></div>
+        <div class="flower_petal flower_petal-10"></div>
+        <div class="flower_petal flower_petal-11"></div>
+        <div class="flower_petal flower_petal-12"></div>
+        <div class="flower_leaf flower_leaf-1"></div>
+        <div class="flower_leaf flower_leaf-2"></div>
+      </div>
+
+      <div class="flower_wrapper flower-wrapper-small">
+       
+        <div class="flower_stem"></div>
+        <div class="flower_center"></div>
+        <div class="flower_petal flower_petal-1"></div>
+        <div class="flower_petal flower_petal-2"></div>
+        <div class="flower_petal flower_petal-3"></div>
+        <div class="flower_petal flower_petal-4"></div>
+        <div class="flower_petal flower_petal-5"></div>
+        <div class="flower_petal flower_petal-6"></div>
+        <div class="flower_petal flower_petal-7"></div>
+        <div class="flower_petal flower_petal-8"></div>
+        <div class="flower_petal flower_petal-9"></div>
+        <div class="flower_petal flower_petal-10"></div>
+        <div class="flower_petal flower_petal-11"></div>
+        <div class="flower_petal flower_petal-12"></div>
+        <div class="flower_leaf flower_leaf-1"></div>
+        <div class="flower_leaf flower_leaf-2"></div>
+      </div>
+
+      <div class="flower_wrapper flower-wrapper-small">
+       
+        <div class="flower_stem"></div>
+        <div class="flower_center"></div>
+        <div class="flower_petal flower_petal-1"></div>
+        <div class="flower_petal flower_petal-2"></div>
+        <div class="flower_petal flower_petal-3"></div>
+        <div class="flower_petal flower_petal-4"></div>
+        <div class="flower_petal flower_petal-5"></div>
+        <div class="flower_petal flower_petal-6"></div>
+        <div class="flower_petal flower_petal-7"></div>
+        <div class="flower_petal flower_petal-8"></div>
+        <div class="flower_petal flower_petal-9"></div>
+        <div class="flower_petal flower_petal-10"></div>
+        <div class="flower_petal flower_petal-11"></div>
+        <div class="flower_petal flower_petal-12"></div>
+        <div class="flower_leaf flower_leaf-1"></div>
+        <div class="flower_leaf flower_leaf-2"></div>
+      </div>
+    </div>
+  </body>
+  <a href="index.html" class="return-btn">Regresar</a>
+
+</html>
